@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="icon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Permanent+Marker&family=Poppins:wght@200;400;500&family=Roboto+Condensed&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylo.css">
+    <title>Dora-Bell</title>
+
+    
+</head>
+<body>
+    <!-- Add this script for the click sound -->
+    <audio id="clickSound">
+        <source src="no.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="bg1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <header> 
+            <a href="index.html" class="logo">Dora-Bell</a>
+            <ul class="navlist">
+                <li><a href="index.html" class="active" onclick="playClickSound()">Home</a></li>
+                <li><a href="Movies.html" onclick="playClickSound()">Movies</a></li>
+                <li><a href="About.html" onclick="playClickSound()">About</a></li>
+                <li><a href="Me.html" onclick="playClickSound()">Me</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="signup.html" class="h-btn">Sign-Up</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <h6>#1 Trending</h6>
+                <h3>Epic Games</h3>
+                <h1>Dora-Bell</h1>
+                <p>All the games, all the time. No additional purchases or revolving monthly catalogs. Play whatever you want, whenever you want, as many times as you want.</p>
+                <div class="main-btnn">
+                    <a href="#">Play Now</a>
+                    <a href="#" class="cta"><i class="ri-play-line"></i>Watch GamePlay</a>
+                </div>
+            </div>
+        </section>
+        <div class="social">
+            <a href="#"><i class="ri-microsoft-fill"></i></a>
+            <a href="#"><i class="ri-apple-fill"></i></a>
+            <a href="#"><i class="ri-android-fill"></i></a>
+            <a href="#"><i class="ri-playstation-fill"></i></a>
+            <a href="#"><i class="ri-xbox-fill"></i></a>
+            <a href="#"><i class="ri-discord-fill"></i></a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+
+        const sr = ScrollReveal({
+            distance: '40px',
+            duration: 2500,
+            reset: true
+        });
+
+        sr.reveal('.container h6', { delay: 150, origin: 'left' });
+        sr.reveal('.container h3', { delay: 250, origin: 'right' });
+        sr.reveal('.container h1', { delay: 400, origin: 'top' });
+        sr.reveal('.container p', { delay: 550, origin: 'left' });
+        sr.reveal('.main-btnn', { delay: 700, origin: 'bottom' });
+        sr.reveal('.social', { delay: 850, origin: 'right' });
+
+        function playClickSound() {
+            const clickSound = document.getElementById('clickSound');
+            clickSound.currentTime = 0; // Reset the audio to the beginning
+            clickSound.play();
+        }
+
+        // Function to handle hover effect
+        function addHoverEffect(element) {
+            element.addEventListener('mouseover', function () {
+                element.style.color = '#FFA500'; // Change color on hover (you can adjust the color)
+                playClickSound(); // Play the click sound
+            });
+
+            element.addEventListener('mouseout', function () {
+                element.style.color = ''; // Reset color on mouseout
+            });
+        }
+
+        // Apply hover effect to navigation links
+        const navLinks = document.querySelectorAll('.navlist li a');
+        navLinks.forEach(addHoverEffect);
+    </script>
+</body>
+</html>
+
+<!-- login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="icon" type="image/ico" href="https://cdn3.iconfinder.com/data/icons/wpzoom-developer-icon-set/500/104-512.png">
+
+</head>
+<style>
+    body{
+        background: url(https://wallpapers.com/images/hd/nobita-and-doraemon-walking-in-the-night-1h2b9ci85pm7kasq.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+    .container{
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 300px;
+        width: 300px;
+        top: 30vh;
+        left: 40%;
+        border:0.5px solid rgb(255, 255, 255);
+ 
+    border-radius: 9px;
+    text-align: center;
+    backdrop-filter:blur(15px);
+    }
+    h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+    label{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #loginUsername{
+        border-radius: 9px;
+        height: 30px;
+        outline: none;
+        border: 0.5px solid rgb(16, 145, 231,0.5);
+    }
+    #loginPassword{
+        border-radius: 9px;
+        height: 30px;
+        outline: none;
+        border: 0.5px solid rgb(16, 145, 231,0.5);
+    }
+    #btn{
+       
+        background-color: red;
+        border-radius: 9px;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        outline: none;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+    a{
+        text-decoration: none;
+        color: green;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    #btn:hover{
+        background-color: green;
+    }
+    a:hover{
+        color: red;
+    }
+    @media (max-width:434px) {
+        body{
+           
+         background-size: 1500px 1500px;
+        }
+
+        .container{
+            position: absolute;
+            height: 300px;
+left: 8%;
+        }
+        
+    }
+</style>
+<body><div class="container">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="loginUsername">Username:</label><br>
+        <input type="text" id="loginUsername" name="loginUsername" required><br>
+
+        <label for="loginPassword">Password:</label><br>
+        <input type="password" id="loginPassword" name="loginPassword" required><br>
+<br>
+        <input type="submit" value="Login" id="btn" >
+    </form></div>
+
+  
+    <script >
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const loginUsername = document.getElementById('loginUsername').value;
+    const loginPassword = document.getElementById('loginPassword').value;
+    const userData = JSON.parse(localStorage.getItem('userData')) || [];
+    const user = userData.find(u => u.username === loginUsername && u.password === loginPassword);
+    if (user) {
+        alert('Login successful! You will now be redirected to the home page.');
+        setTimeout(function() {
+            window.location.href = 'index.html'; 
+        }, 2000); 
+    } else {
+        alert('Login failed. Invalid username or password.');
+    }
+});
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Permanent+Marker&family=Poppins:wght@200;400;500&family=Roboto+Condensed&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylo.css">
+    <title>Me|Dora-Bell</title>
+
+    
+</head>
+<body >
+    <audio id="clickSound">
+        <source src="no.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="SEEN.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <header> 
+            <a href="index.html" class="logo">Dora-Bell</a>
+            <ul class="navlist">
+                <li><a href="index.html"  onclick="playClickSound()">Home</a></li>
+                <li><a href="Movies.html" onclick="playClickSound()" >Movies</a></li>
+                <li><a href="About.html" onclick="playClickSound()">About</a></li>
+                <li><a href="Me.html"class="active" onclick="playClickSound()">Me</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="signup.html" class="h-btn">Sign-Up</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        <div class="parent">
+    
+            <div class="left">
+        <h1>Malik Ahmad Fawad</h1>
+            <p>He is a 15 Year Old Muslim Boy<br> Who is a coder </p></div>
+        <div class="right">
+        
+            <img src="16.jpg" >
+        </div>
+        </div>
+        <div class="social">
+            <a href="#"><i class="ri-microsoft-fill"></i></a>
+            <a href="#"><i class="ri-apple-fill"></i></a>
+            <a href="#"><i class="ri-android-fill"></i></a>
+            <a href="#"><i class="ri-playstation-fill"></i></a>
+            <a href="#"><i class="ri-xbox-fill"></i></a>
+            <a href="#"><i class="ri-discord-fill"></i></a>
+        </div>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+
+        const sr = ScrollReveal({
+            distance: '40px',
+            duration: 2500,
+            reset: true
+        });
+
+        sr.reveal('.container h6', { delay: 150, origin: 'left' });
+        sr.reveal('.container h3', { delay: 250, origin: 'right' });
+        sr.reveal('.container h1', { delay: 400, origin: 'top' });
+        sr.reveal('.container p', { delay: 550, origin: 'left' });
+        sr.reveal('.main-btnn', { delay: 700, origin: 'bottom' });
+        sr.reveal('.social', { delay: 850, origin: 'right' });
+        function playClickSound() {
+       const clickSound = document.getElementById('clickSound');
+       clickSound.currentTime = 0; // Reset the audio to the beginning
+       clickSound.play();
+   }
+
+   // Function to handle hover effect
+   function addHoverEffect(element) {
+       element.addEventListener('mouseover', function () {
+           element.style.color = '#FFA500'; // Change color on hover (you can adjust the color)
+           playClickSound(); // Play the click sound
+       });
+
+       element.addEventListener('mouseout', function () {
+           element.style.color = ''; // Reset color on mouseout
+       });
+   }
+
+   // Apply hover effect to navigation links
+   const navLinks = document.querySelectorAll('.navlist li a');
+   navLinks.forEach(addHoverEffect);
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Permanent+Marker&family=Poppins:wght@200;400;500&family=Roboto+Condensed&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylo.css">
+    <title>Movies|Dora-Bell</title>
+
+    
+</head>
+<body>
+    <audio id="clickSound">
+        <source src="no.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="bg2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <header> 
+            <a href="index.html" class="logo">Dora-Bell</a>
+            <ul class="navlist">
+                <li><a href="index.html" onclick="playClickSound()">Home</a></li>
+                <li><a href="Movies.html"class="active" onclick="playClickSound()">Movies</a></li>
+                <li><a href="About.html" onclick="playClickSound()">About</a></li>
+                <li><a href="Me.html" onclick="playClickSound()">Me</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="signup.html" class="h-btn">Sign-Up</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        
+   
+           
+            <input type="text" id="searchInput" placeholder="Search by Movie Name">
+       
+        
+        <main>
+            <div id="movieContainer">
+                <!-- Movie posters will be displayed here -->
+            </div>
+        </main>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        
+        <div class="social">
+            <a href="#"><i class="ri-microsoft-fill"></i></a>
+            <a href="#"><i class="ri-apple-fill"></i></a>
+            <a href="#"><i class="ri-android-fill"></i></a>
+            <a href="#"><i class="ri-playstation-fill"></i></a>
+            <a href="#"><i class="ri-xbox-fill"></i></a>
+            <a href="#"><i class="ri-discord-fill"></i></a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+
+        const sr = ScrollReveal({
+            distance: '40px',
+            duration: 2500,
+            reset: true
+        });
+
+        sr.reveal('.container h6', { delay: 150, origin: 'left' });
+        sr.reveal('.container h3', { delay: 250, origin: 'right' });
+        sr.reveal('.container h1', { delay: 400, origin: 'top' });
+        sr.reveal('.container p', { delay: 550, origin: 'left' });
+        sr.reveal('.main-btnn', { delay: 700, origin: 'bottom' });
+        sr.reveal('.social', { delay: 850, origin: 'right' });
+    
+        const movies = [
+    { name: "Doraemon Treasure Island Movie", link: "https://dood.wf/d/yogai2zz04wh" ,image:"https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8QhXwx-U2VsC7toPEr7klGXcJLoHzV7Yrcszmm66qkufMbA2H2CGgQS8pKLiNm6dJwjRgniCffD0m3HkSJ2scIhW2mtdVZGzALG9qNjnZwfBC4x_QcrQRAe3KGBN-FvBI8G3H1Tba_Gywc5AZHPXkn7dO_kimHiGiu_CuJ2CNCHRHcPc07hjcCywS/w226-h320/Doraemon%20Movie%20Nobita%E2%80%99s%20Treasure%20Island%20Hindi%20Dubbed%20Download.jpg" },
+    { name: "Doraemon Nobita Chal Pada Antartica Movie", link: "https://dood.wf/d/veeysvpuakjl", image: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhEvTRChCjFS8yXQ8wV7dPhlxGntzr6vXITKnMrt3EIaYQbnOqWsVXagn_kByED6pWiTkgbUf__wKESbyoTvMT_4TwBjvAm1N23PP9cE76MErHTrns5GmsTf2apnzwQhobP_Xha5rH1JSXsP1krYUoeiLVLbX1yjkDMTCcXz_wfkS7qYQi58a643sL1iw/s1920/20220814_210621.jpg" },
+    { name: "Doraemon Steel TroopS Movie", link: "https://dood.ws/d/k0vw91yne8dt", image: "https://1.bp.blogspot.com/-hNsJ6n0QkCo/XqEHGt-Or_I/AAAAAAAAHcU/xCz2BCeT_jQyNO4ZdhXZgc-HK1CyYkGswCLcBGAsYHQ/w227-h320/Doraemon%2Bin%2BNobita%2Band%2Bthe%2BSteel%2BTroops%2BThe%2BNew%2BAge%2BImages%2BIn%2BHD.jpeg" },
+    { name: "Doraemon Magical Island Movie ", link: "https://dood.ws/d/o2pfxzhx98fq", image: "https://1.bp.blogspot.com/-lyGbv6XEqhQ/XqEImCv8BjI/AAAAAAAAHco/ATjMWWkug9ADDbNryuaItHAv7cLTz-7RgCLcBGAsYHQ/w240-h320/Doraemon%2BThe%2BMovie%2BNobita%2BAur%2BJadooi%2BTapu%2BImages%2BIn%2B720p.jpeg" },
+   
+   
+    { name: "Doraemon Koya Koya Planet Movie", link: "https://dood.ws/d/edimgo60f2pm", image: "https://1.bp.blogspot.com/-CjRGddwBMUs/XpXaGDeoBwI/AAAAAAAAHXU/ud75SFgEzJUE-WJqw2g-oQSxFMSkSp5ywCLcBGAsYHQ/w240-h320/Doraemon%2BThe%2BMovie%2BAdventures%2BOf%2BKoya%2BKoya%2BPlanet%2BImages%2Bin%2BHD.jpeg" },
+   
+    { name: "Doraemon Yeh Bhi Tha Nobita Woh Bhi Tha Nobita Movie", link: "https://dood.ws/d/n29praklku31", image: "https://1.bp.blogspot.com/-IeooqZyUxso/XqEM9bi_xCI/AAAAAAAAHdM/NLrLJOM1hPkbtW308eS-CoRVlwrkKg3wgCLcBGAsYHQ/w240-h320/Doraemon%2BThe%2BMovie%2BYeh%2BBhi%2BTha%2BNobita%2BWoh%2BBhi%2BTha%2BNobita%2BImages%2BIn%2BHD.jpeg" },
+    { name: "Doraemon Dorabian Knights Movie", link: "https://dood.ws/d/z37g568zs88g", image: "https://1.bp.blogspot.com/-nBWPBCcojbM/XqEOXLjARoI/AAAAAAAAHdg/wc_zbRbOAA4gL2QvLySPhAYtUaTadaV7ACLcBGAsYHQ/w226-h320/Doraemon%2BThe%2BMovie%2BNobita%2527s%2BDorabian%2BNights%2BImages%2BIn%2BHD.jpeg" },
+   
+    { name: "Doraemon Three Magical Swordmens Movie", link: "https://dood.ws/d/75pldw2c6zx6", image: "https://1.bp.blogspot.com/-H8qo7QfIkho/XqAhVgUWlsI/AAAAAAAAHbo/X6lzIsv3jGIH77pJSmBqJxLGy5EFP_qPwCLcBGAsYHQ/w226-h320/Doraemon%2BThe%2BMovie%2BNobita%2527s%2BThree%2BMagical%2BSwordsmen.jpeg" },
+    { name: "Doraemon Toofani Adventure Movie", link: "https://dood.ws/d/d2z1vledytgj", image: "https://1.bp.blogspot.com/--SbzGM2i1TQ/XqAfsPO_GzI/AAAAAAAAHbI/f_lVgIaBjDgNcGcunBRjppv-i1d3xx9UwCLcBGAsYHQ/w226-h320/Doraemon%2BThe%2BMovie%2BToofani%2BAdventure%2BImages%2BIn%2BHd.jpeg" },
+    
+    { name: "Doraemon Jadui Jalpari Movie", link: "https://dood.ws/d/zc8ufvzwl0yp", image: "https://1.bp.blogspot.com/-yq8LdwwYvEY/XqAeVKJ5h0I/AAAAAAAAHa0/bmBV_kkA1-c2H7BKDzJALfdRv99e1XPtQCLcBGAsYHQ/w240-h320/Doraemon%2BThe%2BMovie%2BNobita%2BAur%2BEk%2BJalpari%2BImages%2BIn%2BHd.jpeg" },
+    
+    { name: "Doraemon  Jadoo Mantar Or Jahnoom Movie", link: "https://dood.ws/d/h54filylp7ox", image: "https://m.media-amazon.com/images/M/MV5BYzg2N2ZiMTgtYjcxMy00MjgwLWJlNzItYTJlZWIwZTFiNTJhL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNDc0Njc1NTY@._V1_FMjpg_UX1000_.jpg" },
+    
+    { name: "Doraemon Detective Nobita Gadget Movie", link: "https://dood.ws/d/ngwb3nyxa6ckc", image: "https://1.bp.blogspot.com/--gX3-GKIiWg/XppupeavZLI/AAAAAAAAHX0/tqHlcAtBMFICVANxYef44-WkABq5qxSeQCLcBGAsYHQ/w224-h320/Doraemon%2BThe%2BMovie%2BGadget%2BMuseum%2BKa%2BRahasya%2BImages%2Bin%2B720P.jpeg" },
+   
+   
+    { name: "Doraemon Nobita Dinosaur Movie", link: "https://dood.ws/d/z2z0jmsm54in", image: "https://1.bp.blogspot.com/-qQh_2KpBw1Y/XqEPiDQ6e1I/AAAAAAAAHd0/RtcGPe56scYTB6fVH4m4yDcGJvBWDOOzQCLcBGAsYHQ/w213-h320/Doraemon%2BThe%2BMovie%2BNobita%2527s%2BDinosaur%2BImages%2BIn%2BHD.jpeg" },
+  
+    { name: "Doraemon South Sea Movie", link: "https://dood.ws/d/9puxfb97ccm0", image: "https://1.bp.blogspot.com/-aACXJ5QS2BA/Xp1mBPsNoZI/AAAAAAAAHZo/h7J3KSDqXAAArYvgRCl7HG_fIXVUZWbhACLcBGAsYHQ/w240-h320/Doraemon%2BThe%2BMovie%2BGreat%2BAdventure%2BTo%2BThe%2BSouth%2BSeas%2BImages%2BIn%2BHd.jpeg" },
+   
+    { name: "Doraemon  Hara Hara Planet Movie", link: "https://dood.ws/d/9u3k2602mkyr", image: "https://m.media-amazon.com/images/M/MV5BZWU1MmY5YzUtYTkyNy00MmQyLTlmNjctOTdiYjc3ZjRlOTIxL2ltYWdlXkEyXkFqcGdeQXVyNDA5ODU0NDg@._V1_FMjpg_UX1000_.jpg" },
+    { name: "Doraemon Spiral City Movie", link: "https://dood.ws/d/gb2458fklenp", image: "https://m.media-amazon.com/images/M/MV5BNzU1MDkzY2EtODZlZS00NmFjLWE0ZDQtZjUyOWNjMTY1N2ExXkEyXkFqcGdeQXVyNzU3NDgwMjQ@._V1_.jpg"},
+   
+   
+    { name: "Doraemon Ichi Mera Dost Movie", link: "https://dood.ws/d/3998w0dseyg5", image: "https://s.pacn.ws/1/p/PA.75454.002.jpg?v=qmmo1i" },
+   
+    { name: "Doraemon Nobita Bana Superhero Movie", link: "https://dood.ws/d/zj6d22iwj2qh", image: "https://m.media-amazon.com/images/M/MV5BNjQ1YTZiMzQtNTljMS00MGYyLTgxYWYtMmY4MmQ2Njg1OTUwXkEyXkFqcGdeQXVyODk1NzM2MjE@._V1_FMjpg_UX1000_.jpg" },
+   
+   
+    { name: "Doraemon Tin Hotel Movie", link: "https://dood.ws/d/kcd1o5ntxt45", image: "https://m.media-amazon.com/images/M/MV5BOWM3YzdlZjAtZmZhMC00MWQyLThhMmMtNzk1NjU4ODhiMjkxXkEyXkFqcGdeQXVyODk1NzM2MjE@._V1_FMjpg_UX1000_.jpg"},
+   
+    { name: "Doraemon Birdtopia Ka Sultan Movie", link: "https://dood.ws/d/3k98gtrokx5z", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPB-AHxhSHkW53UTbiENsgYGYdKRRmV7azm_LnYEc4CkpYle0fcVfM2gG6PqVXYNt0q2Y&usqp=CAU" },
+   
+    { name: "Doraemon Golmaal Movie", link: "https://dood.ws/d/q3ded2dhl0lz", image: "https://m.media-amazon.com/images/M/MV5BNzU1MDkzY2EtODZlZS00NmFjLWE0ZDQtZjUyOWNjMTY1N2ExXkEyXkFqcGdeQXVyNzU3NDgwMjQ@._V1_FMjpg_UX1000_.jpg" },
+    { name: "Doraemon Under Water Adventure Movie", link: "https://dood.ws/d/gwzziy6skdje", image: "https://m.media-amazon.com/images/M/MV5BNWVhZmZmMTEtZjRjNi00MjFmLWI2OWItZTZhNjAwNzEwMzJkXkEyXkFqcGdeQXVyODk1NzM2MjE@._V1_FMjpg_UX1000_.jpg" },
+    
+    { name: "Doraemon  SuperHeroes Movie", link: "https://dood.ws/d/je1yt14z4jzc", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBeOnRof72eFWyPi8mE-4I2Zwdy5NtR6tbkQ&usqp=CAU" },
+  
+    { name: "Doraemon Stand By Me 2 Movie", link: "https://dood.ws/d/ylroa70eb0ai", image: "https://m.media-amazon.com/images/M/MV5BMzQ2MzJmZGMtZjhmNS00MGUyLWJjOGMtYzVmMTg4OTA2YzZkXkEyXkFqcGdeQXVyMTEwMjgyMzIz._V1_.jpg" },
+  
+    { name: "Doraemon Stand By Me Movie", link: "https://dood.ws/d/67uoi2ku7oo7", image: "https://1.bp.blogspot.com/-wQWCmMBvM5c/XqAggH-_wlI/AAAAAAAAHbY/_iURXDLE2VsHV8497K0s8rTrrJdR3ZxMQCLcBGAsYHQ/w226-h320/Doraemon%2BThe%2BMovie%2BStand%2Bby%2BMe.jpg" },
+    { name: "Doraemon Sky Utopia  Movie", link: "https://www.youtube.com/watch?v=RNDYR00jE9k", image: "https://m.media-amazon.com/images/M/MV5BZWI4YzM2ODMtM2Q1OS00MjU0LWI0MDktOWE1YzIyNTYzMzgxXkEyXkFqcGdeQXVyMTEwMjgyMzIz._V1_.jpg" },
+    { name: "Doraemon Earth Symphony Movie", link: "https://www.youtube.com/watch?v=GUYNG4Lv93I", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-No0C_LrSUEJ1rm5k-HzefFQdZBOvrwxdtypgz5JiGKTOFxOFARzgTfngJ9eCMF21VX8&usqp=CAU" },
+    { name: "Doraemon  First Episode", link: "https://www.youtube.com/watch?v=bEoHEBqFLy8", image: "https://m.media-amazon.com/images/M/MV5BNTkzNjJhYjQtNjU0Yy00Y2M3LWI2ZDgtNDRhZmNlNDFjMjQ5XkEyXkFqcGdeQXVyODk2ODI3MTU@._V1_.jpg" },
+    // Add more movies here
+    
+];
+
+const searchInput = document.getElementById("searchInput");
+const movieContainer = document.getElementById("movieContainer");
+
+// Function to filter movies based on user input
+function searchMovies() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredMovies = movies.filter(movie =>
+        movie.name.toLowerCase().includes(searchTerm)
+    );
+    
+    displayMovies(filteredMovies);
+}
+
+// Function to display movies
+function displayMovies(movieList) {
+    movieContainer.innerHTML = "";
+
+    movieList.forEach(movie => {
+        const movieDiv = document.createElement("div");
+        movieDiv.className = "movie-poster";
+
+        const movieLink = document.createElement("a");
+        movieLink.href = movie.link;
+
+        const movieImage = document.createElement("img");
+        movieImage.src = movie.image;
+        movieImage.alt = movie.name;
+
+        movieLink.appendChild(movieImage);
+        movieDiv.appendChild(movieLink);
+        movieContainer.appendChild(movieDiv);
+    });
+}
+
+// Initial display of all movies
+displayMovies(movies);
+
+// Event listener for search input
+searchInput.addEventListener("input", searchMovies);
+    
+
+  
+function playClickSound() {
+       const clickSound = document.getElementById('clickSound');
+       clickSound.currentTime = 0; // Reset the audio to the beginning
+       clickSound.play();
+   }
+
+   // Function to handle hover effect
+   function addHoverEffect(element) {
+       element.addEventListener('mouseover', function () {
+           element.style.color = '#FFA500'; // Change color on hover (you can adjust the color)
+           playClickSound(); // Play the click sound
+       });
+
+       element.addEventListener('mouseout', function () {
+           element.style.color = ''; // Reset color on mouseout
+       });
+   }
+
+   // Apply hover effect to navigation links
+   const navLinks = document.querySelectorAll('.navlist li a');
+   navLinks.forEach(addHoverEffect);
+    
+    </script>
+</body>
+</html>
+
+<!-- register.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/ico" href="https://cdn-icons-png.flaticon.com/512/2889/2889676.png">
+    <title>Registration</title>
+</head>
+<style>
+    body{
+        background: url(https://wallpapers.com/images/hd/nobita-and-doraemon-walking-in-the-night-1h2b9ci85pm7kasq.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+    .container{
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 30vh;
+        left: 35%;
+        border:0.5px solid rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 9px;
+    text-align: center;
+    backdrop-filter:blur(15px);
+    }
+    h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+    }
+    label{
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #regUsername{
+        border-radius: 9px;
+        height: 30px;
+        outline: none;
+        border: 0.5px solid rgb(16, 145, 231,0.5);
+    }
+    #regPassword{
+        border-radius: 9px;
+        height: 30px;
+        outline: none;
+        border: 0.5px solid rgb(16, 145, 231,0.5);
+    }
+    #btn{
+       
+        background-color: red;
+        border-radius: 9px;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        outline: none;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+    }
+    a{
+        text-decoration: none;
+        color: green;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    }
+    #btn:hover{
+        background-color: green;
+    }
+    a:hover{
+        color: red;
+    }
+    @media (max-width:434px) {
+        body{
+           
+         background-size: 1500px 1500px;
+        }
+
+        .container{
+            position: absolute;
+            height: 300px;
+left: 8%;
+        }
+        
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>Register</h1>
+    <form id="registrationForm">
+        <label for="regUsername">Username:</label><br>
+        <input type="text" id="regUsername" name="regUsername" required><br>
+<br>
+        <label for="regPassword">Password:</label><br>
+        <input type="password" id="regPassword" name="regPassword" required><br>
+<br>
+        <input type="submit" value="Register" id="btn">
+    </form>
+    <p><a href="login.html">Already have an account? Log in here</a></p>
+</div>
+
+
+    <script>  
+document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    const regUsername = document.getElementById('regUsername').value;
+    const regPassword = document.getElementById('regPassword').value;
+    const userData = JSON.parse(localStorage.getItem('userData')) || [];
+    userData.push({ username: regUsername, password: regPassword });
+    localStorage.setItem('userData', JSON.stringify(userData));
+    alert('Registration successful! You will now be redirected to the home page.');
+    setTimeout(function() {
+        window.location.href = 'login.html'; 
+    }, 2000);
+});
+
+
+
+
+        </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="icon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Permanent+Marker&family=Poppins:wght@200;400;500&family=Roboto+Condensed&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylo.css">
+    <title>Dora-Bell</title>
+
+    
+</head>
+<body>
+    <audio id="clickSound">
+        <source src="no.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+   
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="bg1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <header> 
+            <a href="index.html" class="logo">Dora-Bell</a>
+            <ul class="navlist">
+                <li><a href="index.html" class="active" onclick="playClickSound()" >Home</a></li>
+                <li><a href="Movies.html" onclick="playClickSound()">Movies</a></li>
+                <li><a href="About.html"  onclick="playClickSound()">About</a></li>
+                <li><a href="Me.html"  onclick="playClickSound()">Me</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="#" class="h-btn" onclick="playClickSound()">Download</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <h6>#1 Trending</h6>
+                <h3>Epic Games</h3>
+                <h1>Dora-Bell</h1>
+                <p>All the games, all the time. No additional purchases or revolving monthly catalogs. Play whatever you want, whenever you want, as many times as you want.</p>
+                <div class="main-btnn">
+                    <a href="#">Play Now</a>
+                    <a href="#" class="cta"><i class="ri-play-line"></i>Watch GamePlay</a>
+                </div>
+            </div>
+        </section>
+        <div class="social">
+            <a href="#"><i class="ri-microsoft-fill"></i></a>
+            <a href="#"><i class="ri-apple-fill"></i></a>
+            <a href="#"><i class="ri-android-fill"></i></a>
+            <a href="#"><i class="ri-playstation-fill"></i></a>
+            <a href="#"><i class="ri-xbox-fill"></i></a>
+            <a href="#"><i class="ri-discord-fill"></i></a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+
+        const sr = ScrollReveal({
+            distance: '40px',
+            duration: 2500,
+            reset: true
+        });
+
+        sr.reveal('.container h6', { delay: 150, origin: 'left' });
+        sr.reveal('.container h3', { delay: 250, origin: 'right' });
+        sr.reveal('.container h1', { delay: 400, origin: 'top' });
+        sr.reveal('.container p', { delay: 550, origin: 'left' });
+        sr.reveal('.main-btnn', { delay: 700, origin: 'bottom' });
+        sr.reveal('.social', { delay: 850, origin: 'right' });
+         // Function to play click sound
+    function playClickSound() {
+       const clickSound = document.getElementById('clickSound');
+       clickSound.currentTime = 0; // Reset the audio to the beginning
+       clickSound.play();
+   }
+
+   // Function to handle hover effect
+   function addHoverEffect(element) {
+       element.addEventListener('mouseover', function () {
+           element.style.color = '#FFA500'; // Change color on hover (you can adjust the color)
+           playClickSound(); // Play the click sound
+       });
+
+       element.addEventListener('mouseout', function () {
+           element.style.color = ''; // Reset color on mouseout
+       });
+   }
+
+   // Apply hover effect to navigation links
+   const navLinks = document.querySelectorAll('.navlist li a');
+   navLinks.forEach(addHoverEffect);
+    </script>
+</body>
+</html>
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color:black;
+    color: white;
+    font-size: 16px;
+ cursor:url(./cursor.png),auto;
+    overflow-x: hidden;
+}
+
+.video-container {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 13%;
+    background: transparent;
+    transition: all ease .50s;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+cursor:url(./pointer.png),auto;
+
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin: 0 30px;
+    padding: 2px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all ease .50s;
+    cursor:url(./pointer.png),auto;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+}
+
+.navlist a.active {
+    border-bottom: 2px solid white;
+}
+
+.right-nav {
+    display: flex;
+    align-items: center;
+}
+
+.h-btn {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid #ffffff;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    margin-right: 20px;
+    color: white;
+    transition: all ease .50s;
+    cursor:url(./pointer.png),auto;
+}
+
+.h-btn:hover {
+    transform: scale(1.06);
+    color: black;
+    background: white;
+    border: 1px solid white;
+    cursor:url(./pointer.png),auto;
+}
+
+#menu-icon {
+    font-size: 42px;
+    z-index: 10001;
+    cursor: pointer;
+    display: none;
+    cursor:url(./pointer.png),auto;
+}
+
+section {
+    padding: 0 13%;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.container {
+    padding-top: 110px;
+}
+
+.container h6 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.container h1 {
+    font-size: 100px;
+    margin: 0px 0px 30px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.container h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.container p {
+    width: 500px;
+    max-width: 100%;
+    line-height: 2;
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.container a {
+    display: inline-block;
+    color: black;
+    background: white;
+    border: 1px solid white;
+    padding: 9px 25px;
+    line-height: 1.4;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all ease .50s;
+    cursor:url(./pointer.png),auto;
+}
+
+.container a:hover {
+    transform: scale(1.06);
+    color: white;
+    background: transparent;
+    border: 1px solid #dcf3fa;
+}
+
+.container a.cta {
+    border: 1px solid #dcf3fa;
+    color: white;
+    background: transparent;
+    margin-left: 20px;
+    transition: all ease .50s;
+    cursor:url(./pointer.png),auto;
+}
+
+.container a.cta:hover {
+    color: black;
+    background: white;
+    border: 1px solid white;
+    cursor:url(./pointer.png),auto;
+}
+
+.container a.cta i {
+    margin-right: 8px;
+    cursor:url(./pointer.png),auto;
+}
+
+.social {
+    position: absolute;
+    bottom: 5%;
+    left: 13%;
+    cursor:url(./pointer.png),auto;
+}
+
+.social i {
+    display: inline-block;
+    color: #bfd9f7;
+    margin-right: 22px;
+    font-size: 24px;
+    transition: all ease .50s;
+    cursor:url(./pointer.png),auto;
+}
+
+.social i:hover {
+    color: white;
+    transform: translateY(-5px);
+    cursor:url(./pointer.png),auto;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 5%;
+    }
+
+    .navlist {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        background: rgba(116, 16, 141, 0.9);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all ease 0.3s;
+        
+    }
+
+    .navlist.active {
+        height: 690px;
+        opacity: 0.99;
+        justify-content: center;
+    }
+
+    .navlist a {
+        margin: 10px 0;
+    }
+
+    .right-nav {
+        margin-top: 10px;
+    }
+
+    .h-btn {
+        padding: 8px 15px;
+        margin-right: 10px;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .container {
+        padding-top: 150px;
+    }
+
+    .container h6 {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+
+    .container h1 {
+        font-size: 40px;
+        margin: 0 0 15px;
+    }
+
+    .container p {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+
+    .social i {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    .main-btnn {
+        text-align: center;
+    }
+
+    .main-btnn a {
+        display: inline-block;
+        margin: 10px 10px;
+    }
+}
+
+.movies {
+    padding: 22px;
+    display: flex;
+    flex-wrap: nowrap; /* Prevent images from wrapping to the next line */
+    overflow-x: auto; /* Add horizontal scroll if necessary */
+    position: relative;
+    top: 100px;
+}
+
+.movies a {
+    margin-right: 10px; /* Adjust the spacing between images */
+    text-decoration: none; /* Remove the underline from links */
+}
+
+.movies img {
+    width: 200px; /* Set a fixed width for all images */
+    height: auto; /* Allow the height to adjust proportionally */
+    border-radius: 9px;
+    transition: transform 0.2s; /* Add a smooth transition effect */
+    cursor:url(./pointer.png),auto
+}
+
+.movies img:hover {
+    transform: scale(1.05); /* Enlarge the image on hover */
+    border: 5px solid rgb(248, 57, 57);
+    box-shadow: 0px 0px 30px rgb(248, 57, 57);
+    cursor:url(./cursor.png),auto;
+}
+::-webkit-scrollbar {
+    background-color: transparent !important;
+    cursor:url(./cursor.png),auto !important;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+    cursor:url(./cursor.png),auto !important;
+    background-color: red !important;
+    border-radius: 9px !important;
+ }
+ 
+
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    outline: none;
+    border: 2px solid   #08284d;
+    border-radius: 9px;
+    position: absolute;
+    top: 100px;
+    left: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+#movieContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 180px;
+    left: -10px;
+    cursor:url(./pointer.png),auto;
+}
+
+.movie-poster {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 9px;
+    cursor:url(./pointer.png),auto;
+    
+}
+.movie-poster img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    cursor:url(./pointer.png),auto;
+   
+}
+.movie-poster:hover{
+    box-shadow: 0px 0px 50px  rgb(57, 185, 25);
+}
+
+  .About {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg, rgb(255, 255, 255), blue, rgb(212, 14, 14));
+    background-size: 200% 100%;
+    animation: moveBackground 2s infinite linear;
+  }
+
+  @keyframes moveBackground {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+  table {
+    padding: 22px;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(55, 182, 255);
+    display: flex;
+    border-radius: 9px;
+}
+
+th {
+    cursor:url(./pointer.png),auto;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 9px;
+    padding: 12px;
+    color: white;
+    background-color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+td {cursor:url(./pointer.png),auto;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 9px;
+    padding: 12px;
+    color: white;
+    background-color: red;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table img {
+    cursor:url(./pointer.png),auto;
+   
+    max-width: 100%;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0px 0px 70px rgb(175, 15, 15);
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+.moreText {
+    display: none;
+    text-align: justify;
+}
+
+.learnMore {
+    color: rgb(255, 255, 255);
+    cursor:url(./pointer.png),auto;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(14, 138, 21);
+    border-radius: 9px;
+    margin-top: 10px;
+}
+
+.separater {
+    background-color: rgb(55, 182, 255);
+    padding: 12px 10px;
+    border-radius: 9px;
+    text-align: center; 
+    position: relative;
+    top: 100px;/* Center the content within the separator */
+}
+
+.parent{
+    background-color: transparent;
+    height: 80vh;
+  display: flex;
+flex-direction: row;
+position: relative;
+top: 120px;
+cursor:url(./pointer.png),auto;
+
+}
+.left{
+    background-color:transparent;
+    height: 100% ;
+    position: relative;
+   width: 50%;
+   padding: 20px;
+   cursor:url(./pointer.png),auto;
+}
+.right{
+    background-color: transparent;
+    height: 100%;
+width: 50%;
+align-items: center;
+justify-content: center;
+padding: 20px;
+cursor:url(./pointer.png),auto;
+}
+.right img{
+    height: 50%;
+    width: 50%;
+    border-radius: 50% ;
+    position: relative;
+    left: 20%;
+    top: 30px;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    animation: orbits 35.5s linear infinite;
+    cursor:url(./pointer.png),auto;
+}
+.left h1{
+    cursor:url(./pointer.png),auto;
+    font-size: 50px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.left h1:hover{
+    background-color: rgb(23, 173, 243,0.8);
+    border-radius: 9px;
+    transition: ease-in-out 2.50s ;
+}
+.left p{
+    cursor:url(./pointer.png),auto;
+    font-size: 20px;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.left p:hover{
+    background-color: rgb(175, 15, 15,0.8);
+    border-radius: 7px;
+    transition: ease-in-out 2.50s;
+    cursor:url(./pointer.png),auto;
+}
+.right img:hover{
+    border: 50px solid rgb(59, 59, 59,0.5);
+    transition: ease-in-out .50s;
+    animation: orbit 35.5s linear infinite;
+    cursor:url(./pointer.png),auto;
+}
+@keyframes orbit {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    100% {
+        transform: translateX(200px) rotate(360deg);
+    }
+    
+}
+@keyframes orbits {
+    0% {
+        transform: translateX(10px) rotate(1000deg);
+    }
+    100% {
+        transform: translateX(200px) rotate(360deg);
+    }
+    
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icon.ico">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nabla&family=Permanent+Marker&family=Poppins:wght@200;400;500&family=Roboto+Condensed&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylo.css">
+    <title>About|Dora-Bell</title>
+
+    
+</head>
+<body class="About">
+    <audio id="clickSound">
+        <source src="no.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+        <header> 
+            <a href="index.html" class="logo">Dora-Bell</a>
+            <ul class="navlist">
+                <li><a href="index.html" onclick="playClickSound()">Home</a></li>
+                <li><a href="Movies.html" onclick="playClickSound()">Movies</a></li>
+                <li><a href="About.html"class="active" onclick="playClickSound()">About</a></li>
+                <li><a href="Me.html" onclick="playClickSound()">Me</a></li>
+            </ul>
+            <div class="right-nav">
+                <a href="signup.html" class="h-btn">Sign-Up</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        <div class="separater">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                </tr>
+                <tr>
+                    <td colspan="4"> <!-- Use colspan to span all columns -->
+                        <img src="https://c8.alamy.com/comp/EEJFJC/portrait-of-handsome-boy-mali-EEJFJC.jpg" alt="bg">
+                        <p class="moreText">Doraemon is the main character of the series. He is the most intelligent person
+                            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</p>
+        
+                        <p class="learnMore" onclick="toggleText(this)">Learn More</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Doraemon</td>
+                    <td>12</td>
+                    <td>Tokyo</td>
+                    <td>3-9-2112</td>
+                </tr>
+            </table>
+        </div><br>
+        <div class="separater">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                </tr>
+                <tr>
+                    <td colspan="4"> <!-- Use colspan to span all columns -->
+                        <img src="https://c8.alamy.com/comp/EEJFJC/portrait-of-handsome-boy-mali-EEJFJC.jpg" alt="bg">
+                        <p class="moreText">Doraemon is the main character of the series. He is the most intelligent person
+                            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</p>
+        
+                        <p class="learnMore" onclick="toggleText(this)">Learn More</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Doraemon</td>
+                    <td>12</td>
+                    <td>Tokyo</td>
+                    <td>3-9-2112</td>
+                </tr>
+            </table>
+        </div><br>
+        <div class="separater">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                </tr>
+                <tr>
+                    <td colspan="4"> <!-- Use colspan to span all columns -->
+                        <img src="https://c8.alamy.com/comp/EEJFJC/portrait-of-handsome-boy-mali-EEJFJC.jpg" alt="bg">
+                        <p class="moreText">Doraemon is the main character of the series. He is the most intelligent person
+                            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</p>
+        
+                        <p class="learnMore" onclick="toggleText(this)">Learn More</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Doraemon</td>
+                    <td>12</td>
+                    <td>Tokyo</td>
+                    <td>3-9-2112</td>
+                </tr>
+            </table>
+        </div><br>
+        <div class="separater">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>City</th>
+                    <th>Date Of Birth</th>
+                </tr>
+                <tr>
+                    <td colspan="4"> <!-- Use colspan to span all columns -->
+                        <img src="https://c8.alamy.com/comp/EEJFJC/portrait-of-handsome-boy-mali-EEJFJC.jpg" alt="bg">
+                        <p class="moreText">Doraemon is the main character of the series. He is the most intelligent person
+                            IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII</p>
+        
+                        <p class="learnMore" onclick="toggleText(this)">Learn More</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Doraemon</td>
+                    <td>12</td>
+                    <td>Tokyo</td>
+                    <td>3-9-2112</td>
+                </tr>
+            </table>
+        </div><br>
+        
+<div class="social">
+            <a href="#"><i class="ri-microsoft-fill"></i></a>
+            <a href="#"><i class="ri-apple-fill"></i></a>
+            <a href="#"><i class="ri-android-fill"></i></a>
+            <a href="#"><i class="ri-playstation-fill"></i></a>
+            <a href="#"><i class="ri-xbox-fill"></i></a>
+            <a href="#"><i class="ri-discord-fill"></i></a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        let menu = document.querySelector('#menu-icon');
+        let navlist = document.querySelector('.navlist');
+
+        menu.onclick = () => {
+            menu.classList.toggle('bx-x');
+            navlist.classList.toggle('active');
+        };
+
+        const sr = ScrollReveal({
+            distance: '40px',
+            duration: 2500,
+            reset: true
+        });
+
+        sr.reveal('.container h6', { delay: 150, origin: 'left' });
+        sr.reveal('.container h3', { delay: 250, origin: 'right' });
+        sr.reveal('.container h1', { delay: 400, origin: 'top' });
+        sr.reveal('.container p', { delay: 550, origin: 'left' });
+        sr.reveal('.main-btnn', { delay: 700, origin: 'bottom' });
+        sr.reveal('.social', { delay: 850, origin: 'right' });
+        function playClickSound() {
+       const clickSound = document.getElementById('clickSound');
+       clickSound.currentTime = 0; // Reset the audio to the beginning
+       clickSound.play();
+   }
+
+   // Function to handle hover effect
+   function addHoverEffect(element) {
+       element.addEventListener('mouseover', function () {
+           element.style.color = '#FFA500'; // Change color on hover (you can adjust the color)
+           playClickSound(); // Play the click sound
+       });
+
+       element.addEventListener('mouseout', function () {
+           element.style.color = ''; // Reset color on mouseout
+       });
+   }
+
+   // Apply hover effect to navigation links
+   const navLinks = document.querySelectorAll('.navlist li a');
+   navLinks.forEach(addHoverEffect);
+
+   var moreText = document.querySelectorAll(".moreText");
+    moreText.forEach(function (text) {
+        text.style.display = "none";
+    });
+
+    function toggleText(button) {
+        var moreText = button.previousElementSibling;
+        if (moreText.style.display === "none") {
+            moreText.style.display = "block";
+            button.innerHTML = "Show Less";
+        } else {
+            moreText.style.display = "none";
+            button.innerHTML = "Learn More";
+        }
+    }
+    </script>
+</body>
+</html>
